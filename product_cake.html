@@ -145,76 +145,62 @@
     </div>
 
 
-    <div class="container">
-        <div class="row" data-masonry='{"percentPosition": true }'>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img1.webp"></img>
+
+
+    <style>
+        .card {
+            border: none;
+            overflow: hidden
+        }
+        
+        .main_image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            height: 400px;
+            width: 100%;
+            overflow: hidden
+        }
+        
+        .content p {
+            font-size: 12px
+        }
+        
+        .right-side {
+            position: relative
+        }
+        
+        .buttons .btn {
+            height: 50px;
+            width: 150px;
+            border-radius: 0px !important
+        }
+    </style>
+
+    <div class="container mt-5 mb-5">
+        <div class="card">
+            <div class="row g-0">
+                <div class="col-md-6 border-end">
+                    <div class="d-flex flex-column justify-content-center">
+                        <div class="main_image"> <img src="Images/bakingaisle/cake.webp" id="main_product_image" width="350"> </div>
+
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img2.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img3.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img4.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img5.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img6.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img7.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img8.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img9.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img10.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img11.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img12.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img13.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img14.webp"></img>
+                <div class="col-md-6">
+                    <div class="p-3 right-side">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h3>IIlana</h3>
+                        </div>
+                        <div class="mt-2 pr-3 content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                        </div>
+                        <h3>$430.99</h3>
+
+
+                        <div class="buttons d-flex flex-row mt-5 gap-3"> <button class="btn btn-outline-dark">Buy Now</button> <button class="btn btn-dark">Add to Basket</button> </div>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -225,7 +211,11 @@
 
 
 
-    <!-- Footer -->
+
+
+
+
+
     <footer class="bg-light text-center ">
         <!-- Grid container -->
         <div class="container p-4">
@@ -283,14 +273,6 @@
 
     </footer>
     <!-- Footer -->
-
-
-
-
-    <!-- Masonry scripts-->
-    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
-
-
 
 
 
