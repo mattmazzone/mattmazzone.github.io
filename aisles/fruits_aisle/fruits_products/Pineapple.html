@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Pineapple</title>
     <meta charset="utf-8">
@@ -9,86 +10,92 @@
     <script src="js/jquery-1.7.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Eden</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Eden</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Homepage</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Homepage</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Aisles
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <ul class="dropdown-menu" aria-labelledby="dropdown10">
-                            <li><a class="dropdown-item" href="aisle1page.html">Baking Aisle</a></li>
-                            <li><a class="dropdown-item" href="Fruit_Aisle.html">Fruit Aisle</a></li>
-                            <li><a class="dropdown-item" href="beverage_aisle.html">Beverage Aisle</a></li>
-                            <li><a class="dropdown-item" href="cleaningAisle.html">Cleaning Product Aisle</a></li>
-                            <li><a class="dropdown-item" href="veggies_aisle.html">Veggies Aisle</a></li>
-                            <li><a class="dropdown-item" href="#">Condiment Aisle</a></li>
-                            <li><a class="dropdown-item" href="#">Dairy Aisle</a></li>
-                            <li><a class="dropdown-item" href="#">Boxed Dinner and Pasta Aisle</a></li>
-                            <li><a class="dropdown-item" href="#">Cleaning Supplies Aisle</a></li>
-                            <li><a class="dropdown-item" href="#">Personal Care Products Aisle</a></li>
-                        </ul>
-                </li>
-            </ul>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <ul class="dropdown-menu" aria-labelledby="dropdown10">
+                                <li><a class="dropdown-item" href="aisle1page.html">Baking Aisle</a></li>
+                                <li><a class="dropdown-item" href="Fruit_Aisle.html">Fruit Aisle</a></li>
+                                <li><a class="dropdown-item" href="beverage_aisle.html">Beverage Aisle</a></li>
+                                <li><a class="dropdown-item" href="cleaningAisle.html">Cleaning Product Aisle</a></li>
+                                <li><a class="dropdown-item" href="veggies_aisle.html">Veggies Aisle</a></li>
+                                <li><a class="dropdown-item" href="#">Condiment Aisle</a></li>
+                                <li><a class="dropdown-item" href="#">Dairy Aisle</a></li>
+                                <li><a class="dropdown-item" href="#">Boxed Dinner and Pasta Aisle</a></li>
+                                <li><a class="dropdown-item" href="#">Cleaning Supplies Aisle</a></li>
+                                <li><a class="dropdown-item" href="#">Personal Care Products Aisle</a></li>
+                            </ul>
+                    </li>
+                    </ul>
+            </div>
         </div>
-    </div>
-</nav>
-<form class="form-outline d-flex border-0" id="navBarSearchForm">
-    <input class="form-control mr-md-2" type="search" placeholder="Search" aria-label="Search" id="searchBar">
-    <button type="button" class="btn btn-outline-danger" data-bs-toggle="tooltip" aria-label="Right Align" id="searchButton" title="Search Product">
+    </nav>
+    <form class="form-outline d-flex border-0" id="navBarSearchForm">
+        <input class="form-control mr-md-2" type="search" placeholder="Search" aria-label="Search" id="searchBar">
+        <button type="button" class="btn btn-outline-danger" data-bs-toggle="tooltip" aria-label="Right Align" id="searchButton" title="Search Product">
         <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/32/000000/external-search-ui-dreamstale-lineal-dreamstale.png"/>
     </button>
-</form>
+    </form>
 
-<div class="row-fluid">
-    <h1 class="display-1" align="center">Pineapple</h1>
-</div>
-<div class="row-fluid align-items-center h-100">
-    <div class="mx-auto" style="width: 60%;">
-        <div class="card d-flex border-0" align="right">
-            <div class="row no-gutters">
-                <div class="col-lg-6">
-                    <img src="Images/Pineapple/1.jpg" class="card-img" alt="...">
-                </div>
-                <div class="col-lg-6 d-flex align-center">
-                    <div class="card-body">
-                        <h5 class="card-title"><strong>Pineapple</strong></h5>
-                        <div class="row-fluid">
-                            <div class="col-fluid">
-                                <div class="input-group w-auto justify-content-end align-items-center">
-                                    <h5 class="card-text"> Select Quantity:   </h5>
-                                    <input type="number" step="1" max="10" value="1" min="0" name="quantity" class="quantity-field border-0 text-center border-0">
+    <div class="row-fluid">
+        <h1 class="display-1" align="center">Pineapple</h1>
+    </div>
+    <div class="row-fluid align-items-center h-100">
+        <div class="mx-auto" style="width: 60%;">
+            <div class="card d-flex border-0" align="right">
+                <div class="row no-gutters">
+                    <div class="col-lg-6">
+                        <img src="../../../Images/Pineapple/1.jpg" class="card-img" alt="...">
+                    </div>
+                    <div class="col-lg-6 d-flex align-center">
+                        <div class="card-body">
+                            <h5 class="card-title"><strong>Pineapple</strong></h5>
+                            <div class="row-fluid">
+                                <div class="col-fluid">
+                                    <div class="input-group w-auto justify-content-end align-items-center">
+                                        <h5 class="card-text"> Select Quantity: </h5>
+                                        <input type="number" step="1" max="10" value="1" min="0" name="quantity" class="quantity-field border-0 text-center border-0">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <button type="button" class="btn btn-dark btn-block d-flex">Add to Cart&nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-dark btn-block d-flex">Add to Cart&nbsp;&nbsp;&nbsp;
                             <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
                         </button>
-                        <div class="dropdown-divider"></div>
-                        <div class="container-fluid" style="width: 100%;">
-                            <div class="accordion bg-dark" id="accordionExample">
-                                <div class="accordion-item bg-dark border-0">
-                                    <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button  text-dark bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <div class="dropdown-divider"></div>
+                            <div class="container-fluid" style="width: 100%;">
+                                <div class="accordion bg-dark" id="accordionExample">
+                                    <div class="accordion-item bg-dark border-0">
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button  text-dark bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                             More Description
                                         </button>
-                                    </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body bg-light">
-                                            <p class="card-text"><em>A pineapple is a sweet tropical fruit with a tough leathery skin and spiky leaves on top.</em></p>
-                                            <p class="card-text"><h1><strong>$1.22 avg. ea. (185 g avg.)</strong></h1></p>
-                                            <p class="card-text"><h2>$6.59 /kg or $2.99 /lb.</h2></p>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body bg-light">
+                                                <p class="card-text"><em>A pineapple is a sweet tropical fruit with a tough leathery skin and spiky leaves on top.</em></p>
+                                                <p class="card-text">
+                                                    <h1><strong>$1.22 avg. ea. (185 g avg.)</strong></h1>
+                                                </p>
+                                                <p class="card-text">
+                                                    <h2>$6.59 /kg or $2.99 /lb.</h2>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -99,7 +106,7 @@
             </div>
         </div>
     </div>
-</div>
-</div>
+    </div>
 </body>
+
 </html>
