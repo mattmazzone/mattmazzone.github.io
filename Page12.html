@@ -31,6 +31,16 @@
             height: 200px;
         }
 
+        .text-area {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .delivery-pickup {
+            width : 100%;
+            max-width: 300px;
+        }
+
     </style>
 </head>
 <body>
@@ -48,11 +58,11 @@
                     <div class="e-panel card">
                         <div class="card-body center">
                             <label for="ordernumber">Delivery Address</label><br>
-                            <input type="text" id="ordernumber" name="ordernumber" class="label-border margin-bottom-em" size="25"><br>
+                            <input type="text" id="ordernumber" name="ordernumber" class="label-border margin-bottom-em delivery-pickup"><br>
                             <label for="time">Pickup Time</label><br>
-                            <input type="text" id= "time" name="time" class="label-border margin-bottom-em" size="25"><br>
+                            <input type="text" id= "time" name="time" class="label-border margin-bottom-em delivery-pickup"><br>
                             <label for="pwd">Notes</label><br>
-                            <textarea id="pwd" name="pwd" class="label-border margin-bottom-em" rows="5" cols="50"></textarea><br>
+                            <textarea id="pwd" name="pwd" class="label-border margin-bottom-em text-area" rows="5"></textarea><br>
                             <a class="btn btn-md btn-primary">Save</a>
                         </div>
                     </div>
