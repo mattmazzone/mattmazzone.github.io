@@ -15,7 +15,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Eden</a>
+            <a class="navbar-brand" href="../../../index.html">Eden</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -29,12 +29,12 @@
             Aisles
           </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown10">
-                            <li><a class="dropdown-item" href="aisle1page.html">Baking Aisle</a></li>
-                            <li><a class="dropdown-item" href="Fruit_Aisle.html">Fruit Aisle</a></li>
-                            <li><a class="dropdown-item" href="beverage_aisle.html">Beverage Aisle</a></li>
-                            <li><a class="dropdown-item" href="cleaningAisle.html">Cleaning Product Aisle</a></li>
-                            <li><a class="dropdown-item" href="veggies_aisle.html">Veggies Aisle</a></li>
-                            <li><a class="dropdown-item" href="#">Condiment Aisle</a></li>
+                            <li><a class="dropdown-item" href="../../baking_aisle/baking_aisle.html">Baking Aisle</a></li>
+                            <li><a class="dropdown-item" href="../Fruit_Aisle.html">Fruit Aisle</a></li>
+                            <li><a class="dropdown-item" href="../../beverages_aisle/beverage_aisle.html">Beverage Aisle</a></li>
+                            <li><a class="dropdown-item" href="../../cleaning_aisle/cleaningAisle.html">Cleaning Product Aisle</a></li>
+                            <li><a class="dropdown-item" href="../../veggies_aisle/veggies_aisle.html">Veggies Aisle</a></li>
+                            <li><a class="dropdown-item" href="../../snacks_aisle/snack_aisle.html">Snack Aisle</a></li>
                             <li><a class="dropdown-item" href="#">Dairy Aisle</a></li>
                             <li><a class="dropdown-item" href="#">Boxed Dinner and Pasta Aisle</a></li>
                             <li><a class="dropdown-item" href="#">Cleaning Supplies Aisle</a></li>
@@ -69,7 +69,7 @@
                                 <div class="col-fluid">
                                     <div class="input-group w-auto justify-content-end align-items-center">
                                         <h5 class="card-text"> Select Quantity: </h5>
-                                        <input type="number" step="1" max="10" value="1" min="0" name="quantity" class="quantity-field border-0 text-center border-0">
+                                        <input type="number" step="1" max="10" value="0" min="0" name="quantity" class="quantity-field border-0 text-center border-0" id="QuantityIndicator">
                                     </div>
                                 </div>
                             </div>
@@ -89,10 +89,11 @@
                                             <div class="accordion-body bg-light">
                                                 <p class="card-text"><em>A large oblong or roundish fruit with a hard green or white rind often striped or variegated, a sweet watery pink, yellowish, or red pulp, and usually many seeds.</em></p>
                                                 <p class="card-text">
-                                                    <h1><strong>$1.22 avg. ea. (185 g avg.)</strong></h1>
+                                                    <h1><strong>$5.99 avg. ea. (185 g avg.)</strong></h1>
                                                 </p>
                                                 <p class="card-text">
                                                     <h2>$6.59 /kg or $2.99 /lb.</h2>
+                                                    <h2 id="ProductPrice"></h2>
                                                 </p>
                                             </div>
                                         </div>
@@ -106,6 +107,27 @@
         </div>
     </div>
     </div>
+    <script>
+        const quantity = document.getElementById("QuantityIndicator");
+        const priceField = document.getElementById("ProductPrice");
+        let productPrice = localStorage.getItem("productPrice");
+
+        if(productPrice == null){
+            productPrice = 5.99;
+
+        }
+
+        quantity.addEventListener("change",function(event){
+            if(event.target.value == 0){
+                priceField.innerText = "";
+            }else{
+
+                priceField.innerText = `Total Price: ${(productPrice* event.target.value).toFixed(2)}`;
+
+            }
+        });
+
+    </script>
 </body>
 
 </html>
