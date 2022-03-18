@@ -53,7 +53,7 @@
     </form>
 
     <div class="row-fluid">
-        <h1 class="display-1" align="center">Green Grapes</h1>
+        <h1 class="display-1" align="center">Red Grapes</h1>
     </div>
     <div class="row-fluid align-items-center h-100">
         <div class="mx-auto" style="width: 60%;">
@@ -69,7 +69,7 @@
                                 <div class="col-fluid">
                                     <div class="input-group w-auto justify-content-end align-items-center">
                                         <h5 class="card-text"> Select Quantity: </h5>
-                                        <input type="number" step="1" max="10" value="0" min="0" name="quantity" class="quantity-field border-0 text-center border-0" id="QuantityIndicator">
+                                        <input type="number" step="1" max="10" value="0" min="0" name="quantity" class="quantity-field border-0 text-center border-0" id="QuantityIndicatorRedGrape">
                                     </div>
                                 </div>
                             </div>
@@ -92,7 +92,7 @@
                                                     <h1><strong>$11.00 /kg</strong></h1>
                                                 </p>
                                                 <p class="card-text">
-                                                    <h2 id="ProductPrice"></h2>
+                                                    <h2 id="ProductPriceRedGrape"></h2>
                                                 </p>
                                             </div>
                                         </div>
@@ -108,15 +108,29 @@
     </div>
 
     <script>
-        const quantity = document.getElementById("QuantityIndicator");
-        const priceField = document.getElementById("ProductPrice");
-        const productPrice = 11.0;
+        const quantity = document.getElementById("QuantityIndicatorRedGrape");
+        const priceField = document.getElementById("ProductPriceRedGrape");
+        let calculatedPriceRedGrape = localStorage.getItem("calculatedPriceRedGrape");
+        let quantitySelectedRedGrape = localStorage.getItem("quantitySelectedRedGrape");
+        let RedGrapePrice = 11.00;
+
+
+        if(calculatedPriceRedGrape != null ){
+            priceField.innerText = `Total Price: $${calculatedPriceRedGrape}`;
+        }
+
+        if(quantitySelectedRedGrape != null){
+            quantity.value = quantitySelectedRedGrape;
+        }
 
         quantity.addEventListener("change",function(event){
             if(event.target.value == 0){
                 priceField.innerText = "";
             }else{
-                priceField.innerText = `Total Price: ${productPrice* event.target.value}`;
+                let totalPrice = (RedGrapePrice * event.target.value).toFixed(2);
+                localStorage.setItem("calculatedPriceRedGrape",totalPrice);
+                localStorage.setItem("quantitySelectedRedGrape",event.target.value);
+                priceField.innerText = `Total Price: $${totalPrice}`;
             }
         });
 

@@ -70,7 +70,7 @@
                                 <div class="col-fluid">
                                     <div class="input-group w-auto justify-content-end align-items-center">
                                         <h5 class="card-text"> Select Quantity: </h5>
-                                        <input type="number" step="1" max="10" value="0" min="0" name="quantity" class="quantity-field border-0 text-center border-0" id="QuantityIndicator">
+                                        <input type="number" step="1" max="10" value="0" min="0" name="quantity" class="quantity-field border-0 text-center border-0" id="QuantityIndicatorPineapple">
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +94,7 @@
                                                 </p>
                                                 <p class="card-text">
                                                     <h2>$10.59 /kg or $7.99 /lb.</h2>
-                                                    <h2 id="ProductPrice"></h2>
+                                                    <h2 id="ProductPricePineapple"></h2>
                                                 </p>
                                             </div>
                                         </div>
@@ -109,15 +109,29 @@
     </div>
     </div>
     <script>
-        const quantity = document.getElementById("QuantityIndicator");
-        const priceField = document.getElementById("ProductPrice");
-        const productPrice = 5.99;
+        const quantity = document.getElementById("QuantityIndicatorPineapple");
+        const priceField = document.getElementById("ProductPricePineapple");
+        let calculatedPricePineapple = localStorage.getItem("calculatedPricePineapple");
+        let quantitySelectedPineapple = localStorage.getItem("quantitySelectedPineapple");
+        let RedGrapePrice = 5.99;
+
+
+        if(calculatedPricePineapple != null ){
+            priceField.innerText = `Total Price: $${calculatedPricePineapple}`;
+        }
+
+        if(quantitySelectedPineapple != null){
+            quantity.value = quantitySelectedPineapple;
+        }
 
         quantity.addEventListener("change",function(event){
             if(event.target.value == 0){
                 priceField.innerText = "";
             }else{
-                priceField.innerText = `Total Price: ${(productPrice* event.target.value).toFixed(2)}`;
+                let totalPrice = (RedGrapePrice * event.target.value).toFixed(2);
+                localStorage.setItem("calculatedPricePineapple",totalPrice);
+                localStorage.setItem("quantitySelectedPineapple",event.target.value);
+                priceField.innerText = `Total Price: $${totalPrice}`;
             }
         });
 

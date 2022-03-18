@@ -69,7 +69,7 @@
                                 <div class="col-fluid">
                                     <div class="input-group w-auto justify-content-end align-items-center">
                                         <h5 class="card-text"> Select Quantity: </h5>
-                                        <input type="number" step="1" max="10" value="0" min="0" name="quantity" class="quantity-field border-0 text-center border-0" id="QuantityIndicator">
+                                        <input type="number" step="1" max="10" value="0" min="0" name="quantity" class="quantity-field border-0 text-center border-0" id="QuantityIndicatorGreenGrapes">
                                     </div>
                                 </div>
                             </div>
@@ -92,7 +92,7 @@
                                                     <h1><strong>$8.80 /kg$3.99 /lb.</strong></h1>
                                                 </p>
                                                 <p class="card-text">
-                                                    <h2 id="ProductPrice"></h2>
+                                                    <h2 id="ProductPriceGreenGrapes"></h2>
                                                 </p>
                                             </div>
                                         </div>
@@ -108,15 +108,29 @@
     </div>
 
     <script>
-        const quantity = document.getElementById("QuantityIndicator");
-        const priceField = document.getElementById("ProductPrice");
-        const productPrice = 8.80;
+        const quantity = document.getElementById("QuantityIndicatorGreenGrapes");
+        const priceField = document.getElementById("ProductPriceGreenGrapes");
+        let calculatedPriceGreenGrapes = localStorage.getItem("calculatedPriceGreenGrapes");
+        let quantitySelectedGreenGrapes = localStorage.getItem("quantitySelectedGreenGrapes");
+        let GuavaPrice = 8.80;
+
+
+        if(calculatedPriceGreenGrapes != null ){
+            priceField.innerText = `Total Price: $${calculatedPriceGreenGrapes}`;
+        }
+
+        if(quantitySelectedGreenGrapes != null){
+            quantity.value = quantitySelectedGreenGrapes;
+        }
 
         quantity.addEventListener("change",function(event){
             if(event.target.value == 0){
                 priceField.innerText = "";
             }else{
-                priceField.innerText = `Total Price: ${(productPrice* event.target.value).toFixed(2)}`;
+                let totalPrice = (GuavaPrice * event.target.value).toFixed(2);
+                localStorage.setItem("calculatedPriceGreenGrapes",totalPrice);
+                localStorage.setItem("quantitySelectedGreenGrapes",event.target.value);
+                priceField.innerText = `Total Price: $${totalPrice}`;
             }
         });
 

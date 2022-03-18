@@ -110,20 +110,27 @@
     <script>
         const quantity = document.getElementById("QuantityIndicator");
         const priceField = document.getElementById("ProductPrice");
-        let productPrice = localStorage.getItem("productPrice");
+        let calculatedPrice = localStorage.getItem("calculatedPrice");
+        let quantitySelected = localStorage.getItem("quantitySelected");
+        let watermelonPrice = 5.99;
 
-        if(productPrice == null){
-            productPrice = 5.99;
 
+        if(calculatedPrice != null ){
+            priceField.innerText = `Total Price: ${calculatedPrice}`;
+        }
+
+        if(quantitySelected != null){
+            quantity.value = quantitySelected;
         }
 
         quantity.addEventListener("change",function(event){
             if(event.target.value == 0){
                 priceField.innerText = "";
             }else{
-
-                priceField.innerText = `Total Price: ${(productPrice* event.target.value).toFixed(2)}`;
-
+                let totalPrice = (watermelonPrice * event.target.value).toFixed(2);
+                localStorage.setItem("calculatedPrice",totalPrice);
+                localStorage.setItem("quantitySelected",event.target.value);
+                priceField.innerText = `Total Price: ${totalPrice}`;
             }
         });
 

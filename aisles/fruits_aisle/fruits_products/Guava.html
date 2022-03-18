@@ -69,7 +69,7 @@
                                 <div class="col-fluid">
                                     <div class="input-group w-auto justify-content-end align-items-center">
                                         <h5 class="card-text"> Select Quantity: </h5>
-                                        <input type="number" step="1" max="10" value="0" min="0" name="quantity" class="quantity-field border-0 text-center border-0" id="QuantityIndicator">
+                                        <input type="number" step="1" max="10" value="0" min="0" name="quantity" class="quantity-field border-0 text-center border-0" id="QuantityIndicatorGuava">
                                     </div>
                                 </div>
                             </div>
@@ -93,7 +93,7 @@
                                                 </p>
                                                 <p class="card-text">
                                                     <h2>$8.59 /kg or $3.99 /lb.</h2>
-                                                    <h2 id="ProductPrice"></h2>
+                                                    <h2 id="ProductPriceGuava"></h2>
                                                 </p>
                                             </div>
                                         </div>
@@ -108,15 +108,29 @@
     </div>
     </div>
     <script>
-        const quantity = document.getElementById("QuantityIndicator");
-        const priceField = document.getElementById("ProductPrice");
-        const productPrice = 2.44;
+        const quantity = document.getElementById("QuantityIndicatorGuava");
+        const priceField = document.getElementById("ProductPriceGuava");
+        let calculatedPriceGuava = localStorage.getItem("calculatedPriceGuava");
+        let quantitySelectedGuava = localStorage.getItem("quantitySelectedGuava");
+        let GuavaPrice = 2.44;
+
+
+        if(calculatedPriceGuava != null ){
+            priceField.innerText = `Total Price: $${calculatedPriceGuava}`;
+        }
+
+        if(quantitySelectedGuava != null){
+            quantity.value = quantitySelectedGuava;
+        }
 
         quantity.addEventListener("change",function(event){
             if(event.target.value == 0){
                 priceField.innerText = "";
             }else{
-                priceField.innerText = `Total Price: ${(productPrice* event.target.value).toFixed(2)}`;
+                let totalPrice = (GuavaPrice * event.target.value).toFixed(2);
+                localStorage.setItem("calculatedPriceGuava",totalPrice);
+                localStorage.setItem("quantitySelectedGuava",event.target.value);
+                priceField.innerText = `Total Price: $${totalPrice}`;
             }
         });
 

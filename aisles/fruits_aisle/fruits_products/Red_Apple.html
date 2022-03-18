@@ -69,7 +69,7 @@
                                 <div class="col-fluid">
                                     <div class="input-group w-auto justify-content-end align-items-center">
                                         <h5 class="card-text"> Select Quantity: </h5>
-                                        <input type="number" step="1" max="10" value="0" min="0" name="quantity" class="quantity-field border-0 text-center border-0" id="QuantityIndicator">
+                                        <input type="number" step="1" max="10" value="0" min="0" name="quantity" class="quantity-field border-0 text-center border-0" id="QuantityIndicatorRedApple">
                                     </div>
                                 </div>
                             </div>
@@ -93,7 +93,7 @@
                                                 </p>
                                                 <p class="card-text">
                                                     <h2>$6.59 /kg or $2.99 /lb.</h2>
-                                                    <h2 id="ProductPrice"></h2>
+                                                    <h2 id="ProductPriceRedApple"></h2>
                                                 </p>
                                             </div>
                                         </div>
@@ -107,20 +107,34 @@
         </div>
     </div>
     </div>
-<script>
-    const quantity = document.getElementById("QuantityIndicator");
-    const priceField = document.getElementById("ProductPrice");
-    const productPrice = 1.25;
+    <script>
+        const quantity = document.getElementById("QuantityIndicatorRedApple");
+        const priceField = document.getElementById("ProductPriceRedApple");
+        let calculatedPriceRedApple = localStorage.getItem("calculatedPriceRedApple");
+        let quantitySelectedRedApple = localStorage.getItem("quantitySelectedRedApple");
+        let RedApplePrice = 1.25;
 
-    quantity.addEventListener("change",function(event){
-        if(event.target.value == 0){
-            priceField.innerText = "";
-        }else{
-            priceField.innerText = `Total Price: ${productPrice* event.target.value}`;
+
+        if(calculatedPriceRedApple != null ){
+            priceField.innerText = `Total Price: $${calculatedPriceRedApple}`;
         }
-    });
 
-</script>
+        if(quantitySelectedRedApple != null){
+            quantity.value = quantitySelectedRedApple;
+        }
+
+        quantity.addEventListener("change",function(event){
+            if(event.target.value == 0){
+                priceField.innerText = "";
+            }else{
+                let totalPrice = (RedApplePrice * event.target.value).toFixed(2);
+                localStorage.setItem("calculatedPriceRedApple",totalPrice);
+                localStorage.setItem("quantitySelectedRedApple",event.target.value);
+                priceField.innerText = `Total Price: $${totalPrice}`;
+            }
+        });
+
+    </script>
 </body>
 
 </html>
