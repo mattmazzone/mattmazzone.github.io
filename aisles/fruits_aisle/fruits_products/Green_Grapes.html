@@ -112,7 +112,7 @@
         const priceField = document.getElementById("ProductPriceGreenGrapes");
         let calculatedPriceGreenGrapes = localStorage.getItem("calculatedPriceGreenGrapes");
         let quantitySelectedGreenGrapes = localStorage.getItem("quantitySelectedGreenGrapes");
-        let GuavaPrice = 8.80;
+        let GreenGrapesPrice = 8.80;
 
 
 
@@ -128,7 +128,7 @@
             if(event.target.value == 0){
                 priceField.innerText = "";
             }else{
-                let totalPrice = (GuavaPrice * event.target.value).toFixed(2);
+                let totalPrice = (GreenGrapesPrice * event.target.value).toFixed(2);
                 localStorage.setItem("calculatedPriceGreenGrapes",totalPrice);
                 localStorage.setItem("quantitySelectedGreenGrapes",event.target.value);
                 priceField.innerText = `Total Price: $${totalPrice}`;
