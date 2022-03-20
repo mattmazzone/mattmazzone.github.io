@@ -207,13 +207,13 @@
                                 </div>
                             </div>
                         </div>
-                        <h3>$11.99</h3>
-
+                        <h3>$5.99</h3>
+                        <h4 id="ProductMilkPrice"></h4>
                         <div class="buttons d-flex flex-row mt-5 gap-3 margin-bot-2">
                             <a href="" class="btn btn-outline-primary">Buy Now</a>
                             <a href="" class="btn btn-primary">Add to Basket</a>
                         </div>
-                        <input type="number" placeholder="Quantity" />
+                        <input type="number" step="1" max="10" value="0" min="0" name="quantity" placeholder="Quantity" class="quantity-field border-0 text-center border-0" id="QuantityIndicatorMilk">
                     </div>
                 </div>
             </div>
@@ -280,7 +280,34 @@
     </footer>
     <!-- Footer -->
 
+    <script>
+        const quantity = document.getElementById("QuantityIndicatorMilk");
+        const priceField = document.getElementById("ProductMilkPrice");
+        let calculatedPriceMilk = localStorage.getItem("calculatedPriceMilk");
+        let quantitySelectedMilk = localStorage.getItem("quantitySelectedMilk");
+        let milkPrice = 5.99;
 
+
+        if(calculatedPriceMilk != null ){
+            priceField.innerText = `Total Price: $${calculatedPriceMilk}`;
+        }
+
+        if(quantitySelectedMilk != null){
+            quantity.value = quantitySelectedMilk;
+        }
+
+        quantity.addEventListener("change",function(event){
+            if(event.target.value == 0){
+                priceField.innerText = "";
+            }else{
+                let totalPrice = (milkPrice * event.target.value).toFixed(2);
+                localStorage.setItem("calculatedPriceMilk",totalPrice);
+                localStorage.setItem("quantitySelectedMilk",event.target.value);
+                priceField.innerText = `Total Price: $${totalPrice}`;
+            }
+        });
+
+    </script>
 
 </body>
 
