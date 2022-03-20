@@ -213,12 +213,13 @@
                             </div>
                         </div>
                         <h3>$11.99</h3>
-
+                        <h4 id="ProductCakePrice"></h4>
                         <div class="buttons d-flex flex-row mt-5 gap-3 margin-bot-2 ">
                             <a href=" " class="btn btn-outline-primary ">Buy Now</a>
                             <a href=" " class="btn btn-primary ">Add to Basket</a>
                         </div>
-                        <input type="number " placeholder="Quantity " />
+                        <input type="number" step="1" max="10" value="0" min="0" name="quantity" placeholder="Quantity" class="quantity-field border-0 text-center border-0" id="QuantityIndicatorCake">
+
                     </div>
                 </div>
             </div>
@@ -285,7 +286,34 @@
     </footer>
     <!-- Footer -->
 
+    <script>
+        const quantity = document.getElementById("QuantityIndicatorCake");
+        const priceField = document.getElementById("ProductCakePrice");
+        let calculatedPriceCake = localStorage.getItem("calculatedPriceCake");
+        let quantitySelectedCake = localStorage.getItem("quantitySelectedCake");
+        let cakePrice = 11.99;
 
+
+        if(calculatedPriceCake != null ){
+            priceField.innerText = `Total Price: $${calculatedPriceCake}`;
+        }
+
+        if(quantitySelectedCake != null){
+            quantity.value = quantitySelectedCake;
+        }
+
+        quantity.addEventListener("change",function(event){
+            if(event.target.value == 0){
+                priceField.innerText = "";
+            }else{
+                let totalPrice = (cakePrice * event.target.value).toFixed(2);
+                localStorage.setItem("calculatedPriceCake",totalPrice);
+                localStorage.setItem("quantitySelectedCake",event.target.value);
+                priceField.innerText = `Total Price: $${totalPrice}`;
+            }
+        });
+
+    </script>
 
 </body>
 
