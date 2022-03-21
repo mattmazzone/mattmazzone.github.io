@@ -86,12 +86,12 @@
                                         <div class="card mb-3 border-0" style="max-width: 340px;">
                                             <div class="row g-0">
                                                 <div class="col-md-4 p-3" style="fill: #6394f8;">
-                                                    <img src="../../../Images/veggiesaisle/carrots.png" class="img-fluid rounded-start" alt="...">
+                                                    <img src="../../../Images/veggiesaisle/celery.png" class="img-fluid rounded-start" alt="...">
                                                 </div>
                                                 <div class="col-md-8">
                                                     <div class="card-body">
-                                                        <h5 class="card-title">Carrot</h5>
-                                                        <p id="total_carrot" class="card-text text-end">$</p>
+                                                        <h5 class="card-title">Celery</h5>
+                                                        <p id="total_cake" class="card-text text-end">$</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -154,17 +154,17 @@
             <div class="row g-0 ">
                 <div class="col-md-6 border-end ">
                     <div class="d-flex flex-column justify-content-center ">
-                        <div class="main_image "> <img src="../../../Images/veggiesaisle/carrots.png" id="main_product_image " width="350 "> </div>
+                        <div class="main_image "> <img src="../../../Images/veggiesaisle/celery.png" id="main_product_image " width="350 "> </div>
 
                     </div>
                 </div>
                 <div class="col-md-6 ">
                     <div class="p-3 right-side ">
                         <div class="d-flex justify-content-between align-items-center ">
-                            <h3>Carrot</h3>
+                            <h3>Celery</h3>
                         </div>
 
-                        <p><em>The Freshest carrots you will ever find.</em></p>
+                        <p><em>Celery doesn't get any greener than this.</em></p>
                         <div class="mt-2 pr-3 content margin-bot-2 ">
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item border-0">
@@ -188,12 +188,12 @@
                             </div>
                         </div>
                         <h3>$11.99</h3>
-                        <h4 id="ProductCarrotPrice"></h4>
+                        <h4 id="ProductCakePrice"></h4>
                         <div class="buttons d-flex flex-row mt-5 gap-3 margin-bot-2 ">
                             <a href=" " class="btn btn-outline-primary ">Buy Now</a>
                             <a href=" " class="btn btn-primary ">Add to Basket</a>
                         </div>
-                        <input type="number" step="1" max="10" value="0" min="0" name="quantity" placeholder="Quantity" class="quantity-field border-0 text-center border-0" id="QuantityIndicatorCarrot">
+                        <input type="number" step="1" max="10" value="0" min="0" name="quantity" placeholder="Quantity" class="quantity-field border-0 text-center border-0" id="QuantityIndicatorCake">
 
                     </div>
                 </div>
@@ -262,17 +262,17 @@
     <!-- Footer -->
 
     <script>
-        const quantity = document.getElementById("QuantityIndicatorCarrot");
-        const priceField = document.getElementById("ProductCarrotPrice");
-        const totalnav = document.getElementById("total_carrot");
+        const quantity = document.getElementById("QuantityIndicatorCake");
+        const priceField = document.getElementById("ProductCakePrice");
+        const totalnav = document.getElementById("total_cake");
         const qst = document.getElementById("qst_value");
         const gst = document.getElementById("gst_value");
         const total = document.getElementById("total_cart");
 
         let navPrice = localStorage.getItem("navPrice");
-        let calculatedPriceCarrot = localStorage.getItem("calculatedPriceCarrot");
-        let quantitySelectedCarrot = localStorage.getItem("quantitySelectedCarrot");
-        let carrotPrice = 11.99;
+        let calculatedPriceCake = localStorage.getItem("calculatedPriceCake");
+        let quantitySelectedCake = localStorage.getItem("quantitySelectedCake");
+        let cakePrice = 11.99;
 
         let gst_percent = 0.05;
         let qst_percent = 0.10;
@@ -288,13 +288,13 @@
         
         
 
-        if (calculatedPriceCarrot != null) {
-            priceField.innerText = `Total Price: $${calculatedPriceCarrot}`;
+        if (calculatedPriceCake != null) {
+            priceField.innerText = `Total Price: $${calculatedPriceCake}`;
             
         }
 
-        if (quantitySelectedCarrot != null) {
-            quantity.value = quantitySelectedCarrot;
+        if (quantitySelectedCake != null) {
+            quantity.value = quantitySelectedCake;
         }
 
         if (navPrice != null) {
@@ -310,9 +310,9 @@
                
 
             } else {
-                let totalPrice = (carrotPrice * event.target.value).toFixed(2);
-                localStorage.setItem("calculatedPriceCarrot", totalPrice);
-                localStorage.setItem("quantitySelectedCarrot", event.target.value);
+                let totalPrice = (cakePrice * event.target.value).toFixed(2);
+                localStorage.setItem("calculatedPriceCake", totalPrice);
+                localStorage.setItem("quantitySelectedCake", event.target.value);
                 navPrice = totalPrice;
                 localStorage.setItem("navPrice", navPrice);
 
@@ -327,5 +327,5 @@
 
 </body>
 
-</html>
+</html></html>
  
