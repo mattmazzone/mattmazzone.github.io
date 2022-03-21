@@ -209,13 +209,13 @@
                                 </div>
                             </div>
                         </div>
-                        <h3>$11.99</h3>
-
+                        <h3>$4.99</h3>
+                        <h4 id="ProductPerrierPrice"></h4>
                         <div class="buttons d-flex flex-row mt-5 gap-3 margin-bot-2 ">
                             <a href=" " class="btn btn-outline-primary ">Buy Now</a>
                             <a href=" " class="btn btn-primary ">Add to Basket</a>
                         </div>
-                        <input type="number " placeholder="Quantity " />
+                        <input type="number" step="1" max="10" value="0" min="0" name="quantity" placeholder="Quantity" class="quantity-field border-0 text-center border-0" id="QuantityIndicatorPerrier">
                     </div>
                 </div>
             </div>
@@ -282,7 +282,34 @@
     </footer>
     <!-- Footer -->
 
+    <script>
+        const quantity = document.getElementById("QuantityIndicatorPerrier");
+        const priceField = document.getElementById("ProductPerrierPrice");
+        let calculatedPricePerrier = localStorage.getItem("calculatedPricePerrier");
+        let quantitySelectedPerrier = localStorage.getItem("quantitySelectedPerrier");
+        let perrierPrice = 4.99;
 
+
+        if(calculatedPricePerrier != null ){
+            priceField.innerText = `Total Price: $${calculatedPricePerrier}`;
+        }
+
+        if(quantitySelectedPerrier != null){
+            quantity.value = quantitySelectedPerrier;
+        }
+
+        quantity.addEventListener("change",function(event){
+            if(event.target.value == 0){
+                priceField.innerText = "";
+            }else{
+                let totalPrice = (perrierPrice * event.target.value).toFixed(2);
+                localStorage.setItem("calculatedPricePerrier",totalPrice);
+                localStorage.setItem("quantitySelectedPerrier",event.target.value);
+                priceField.innerText = `Total Price: $${totalPrice}`;
+            }
+        });
+
+    </script>
 
 </body>
 

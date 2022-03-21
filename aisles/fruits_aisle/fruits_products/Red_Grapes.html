@@ -13,47 +13,129 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Eden</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded py-3 py-lg-5 border-bottom">
+    <div class="container-fluid">
+        <a class="navbar-brand ps-5 fw-bolder" href="../../index.html">
+            <img src="https://cdn-icons-png.flaticon.com/512/1261/1261163.png" alt="" height="30" class="d-inline-block align-text-top"> Eden
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Homepage</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Aisles
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fw-bolder pe-4" href="#" id="dropdown10" data-bs-toggle="dropdown" aria-expanded="false">Aisles</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown10">
+                        <li><a class="dropdown-item" href="../../baking_aisle/baking_aisle.html">Baking Aisle</a></li>
+                        <li><a class="dropdown-item" href="../../fruits_aisle/Fruit_Aisle.html">Fruit Aisle</a></li>
+                        <li><a class="dropdown-item" href="../../beverages_aisle/beverage_aisle.html">Beverage Aisle</a></li>
+                        <li><a class="dropdown-item" href="../../cleaning_aisle/cleaningAisle.html">Cleaning Product Aisle</a></li>
+                        <li><a class="dropdown-item" href="../../veggies_aisle/veggies_aisle.html">Veggies Aisle</a></li>
+                        <li><a class="dropdown-item" href="../../snacks_aisle/snack_aisle.html">Snack Aisle</a></li>
+                        <li><a class="dropdown-item" href="#">Condiment Aisle</a></li>
+                        <li><a class="dropdown-item" href="#">Dairy Aisle</a></li>
+                        <li><a class="dropdown-item" href="#">Boxed Dinner and Pasta Aisle</a></li>
+                        <li><a class="dropdown-item" href="#">Personal Care Products Aisle</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bolder pe-4" href="#">All Products</a>
+                </li>
+                <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" height="30" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3<span class="visually-hidden">Items in Cart </span></span>
+                                </svg>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDarkDropdownMenuLink" style="width: 250pt;">
+
+                                <li>
+                                    <div class="container-fluid" style="width: 100%">
+                                        <span class="badge rounded-pill bg-primary">3</span>
+                                        <p class="text-end">Total: $2000</p>
+                                    </div>
+
+                                </li>
+                                <li>
+                                    <div class="card mb-3 border-0" style="max-width: 340px;">
+                                        <div class="row g-0">
+                                            <div class="col-md-4" style="fill: #6394f8;">
+                                                <img src="https://cdn-icons-png.flaticon.com/512/1261/1261163.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Card title</h5>
+                                                    <p class="card-text text-end">Subtitle</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="card mb-3 border-0" style="max-width: 540px;">
+                                        <div class="row g-0">
+                                            <div class="col-md-4">
+                                                <img src="https://cdn-icons-png.flaticon.com/512/1261/1261163.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Card title</h5>
+                                                    <p class="card-text text-end">Subtitle</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="card mb-3 border-0" style="max-width: 540px;">
+                                        <div class="row g-0">
+                                            <div class="col-md-4">
+                                                <img src="https://cdn-icons-png.flaticon.com/512/1261/1261163.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Card title</h5>
+                                                    <p class="card-text text-end">Subtitle</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="col-md-12 text-center">
+                                        <button type="button " class="btn btn-primary btn-block" style="width: 90%; background-color: #6394f8">Checkout</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <li class="nav-item">
+                    <a class="nav-link pe-4" href="../../login.html">
+                        <i class="bi bi-person-circle" height="30" class="d-inline-block align-text-top"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle " viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                        </svg>
                     </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdown10">
-                            <li><a class="dropdown-item" href="../../baking_aisle.html">Baking Aisle</a></li>
-                            <li> <a class="dropdown-item" href="../fruits_aisle/Fruit_Aisle.html">Fruit Aisle</a></li>
-                            <li><a class=" dropdown-item " href="../../beverages_aisle/beverage_aisle.html">Beverage Aisle</a></li>
-                            <li><a class="dropdown-item " href="../../cleaning_aisle/cleaningAisle.html ">Cleaning Product Aisle</a></li>
-                            <li><a class="dropdown-item " href="../../veggies_aisle/veggies_aisle.html">Veggies Aisle</a></li>
-                            <li><a class="dropdown-item" href="../../snacks_aisle/snack_aisle.html">Snack Aisle</a></li>
-                            <li><a class="dropdown-item " href="# ">Condiment Aisle</a></li>
-                            <li><a class="dropdown-item " href="# ">Dairy Aisle</a></li>
-                            <li><a class="dropdown-item " href="# ">Boxed Dinner and Pasta Aisle</a></li>
-                            <li><a class="dropdown-item " href="# ">Personal Care Products Aisle</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+                </li>
+            </ul>
         </div>
-    </nav>
-    <form class="form-outline d-flex border-0" id="navBarSearchForm">
-        <input class="form-control mr-md-2" type="search" placeholder="Search" aria-label="Search" id="searchBar">
-        <button type="button" class="btn btn-outline-danger" data-bs-toggle="tooltip" aria-label="Right Align" id="searchButton" title="Search Product">
-        <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/32/000000/external-search-ui-dreamstale-lineal-dreamstale.png"/>
-    </button>
-    </form>
+    </div>
+</nav>
+<!--    <form class="form-outline d-flex border-0" id="navBarSearchForm">-->
+<!--        <input class="form-control mr-md-2" type="search" placeholder="Search" aria-label="Search" id="searchBar">-->
+<!--        <button type="button" class="btn btn-outline-danger" data-bs-toggle="tooltip" aria-label="Right Align" id="searchButton" title="Search Product">-->
+<!--        <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/32/000000/external-search-ui-dreamstale-lineal-dreamstale.png"/>-->
+<!--    </button>-->
+<!--    </form>-->
 
     <div class="row-fluid">
-        <h1 class="display-1" align="center">Green Grapes</h1>
+        <h1 class="display-1" align="center">Red Grapes</h1>
     </div>
     <div class="row-fluid align-items-center h-100">
         <div class="mx-auto" style="width: 60%;">
@@ -69,7 +151,7 @@
                                 <div class="col-fluid">
                                     <div class="input-group w-auto justify-content-end align-items-center">
                                         <h5 class="card-text"> Select Quantity: </h5>
-                                        <input type="number" step="1" max="10" value="1" min="0" name="quantity" class="quantity-field border-0 text-center border-0">
+                                        <input type="number" step="1" max="10" value="0" min="0" name="quantity" class="quantity-field border-0 text-center border-0" id="QuantityIndicatorRedGrape">
                                     </div>
                                 </div>
                             </div>
@@ -89,10 +171,10 @@
                                             <div class="accordion-body bg-light">
                                                 <p class="card-text"><em>Red seedless grapes range from light red to deep purple-red, depending on variety. They have round or oblong, medium-sized berries and are crisp, sweet and juicy, sometimes with a hint of tartness.</em></p>
                                                 <p class="card-text">
-                                                    <h1><strong>$1.22 avg. ea. (185 g avg.)</strong></h1>
+                                                    <h1><strong>$11.00 /kg</strong></h1>
                                                 </p>
                                                 <p class="card-text">
-                                                    <h2>$6.59 /kg or $2.99 /lb.</h2>
+                                                    <h2 id="ProductPriceRedGrape"></h2>
                                                 </p>
                                             </div>
                                         </div>
@@ -106,4 +188,34 @@
         </div>
     </div>
     </div>
+
+    <script>
+        const quantity = document.getElementById("QuantityIndicatorRedGrape");
+        const priceField = document.getElementById("ProductPriceRedGrape");
+        let calculatedPriceRedGrape = localStorage.getItem("calculatedPriceRedGrape");
+        let quantitySelectedRedGrape = localStorage.getItem("quantitySelectedRedGrape");
+        let RedGrapePrice = 11.00;
+
+
+
+        if(calculatedPriceRedGrape != null ){
+            priceField.innerText = `Total Price: $${calculatedPriceRedGrape}`;
+        }
+
+        if(quantitySelectedRedGrape != null){
+            quantity.value = quantitySelectedRedGrape;
+        }
+
+        quantity.addEventListener("change",function(event){
+            if(event.target.value == 0){
+                priceField.innerText = "";
+            }else{
+                let totalPrice = (RedGrapePrice * event.target.value).toFixed(2);
+                localStorage.setItem("calculatedPriceRedGrape",totalPrice);
+                localStorage.setItem("quantitySelectedRedGrape",event.target.value);
+                priceField.innerText = `Total Price: $${totalPrice}`;
+            }
+        });
+
+    </script>
 </body>
