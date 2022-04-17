@@ -18,6 +18,7 @@
             <a class="navbar-brand ps-5 fw-bolder" href="index.php">
                 <img src="https://cdn-icons-png.flaticon.com/512/1261/1261163.png" alt="" height="30" class="d-inline-block align-text-top"> Eden
             </a>
+            <h5>Welcome, <?php echo $_SESSION['username']; ?></h5>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
            <span class="navbar-toggler-icon"></span>
            </button>

@@ -488,7 +488,6 @@
     <lastname/>
     <address/>
   </user>
-  
   <user>
     <id>Admin</id>
     <email/>
@@ -501,6 +500,14 @@
     <id>adam</id>
     <email/>
     <password>adam</password>
+    <firstname/>
+    <lastname/>
+    <address/>
+  </user>
+  <user>
+    <id>a</id>
+    <email>a</email>
+    <password>a</password>
     <firstname/>
     <lastname/>
     <address/>
