@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<orders>
+
+<order>
+    <ordernumber>1146249</ordernumber>
+    <firstname>Akhilesh</firstname>
+    <lastname>Warty</lastname>
+    <address>1 Larry Plaza</address>
+    <date>26/01/2018</date>
+    <time/>
+    <notes/>
+</order>
+
+<order>
+    <ordernumber>4554939</ordernumber>
+    <firstname>Ruben</firstname>
+    <lastname>Sanchez</lastname>
+    <address/>
+    <date>24/12/2017</date>
+    <time/>
+    <notes>gang gang</notes>
+</order>
+<order>
+    <ordernumber>9646779</ordernumber>
+    <firstname>Alexander</firstname>
+    <lastname>Robitaille</lastname>
+    <address/>
+    <date>13/03/2019</date>
+    <time/>
+    <notes>Contact customer to schedule pickup time</notes>
+</order>
+</orders>

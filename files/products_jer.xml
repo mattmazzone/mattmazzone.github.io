@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<products>
+  <product>
+    <id>1</id>
+    <picture>Pound_layer_cake.jpg</picture>
+    <productname>cake</productname>
+    <quantity>11</quantity>
+  </product>
+  
+</products>

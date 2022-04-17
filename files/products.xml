@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aisles>
+    <aisle>
+        <name>Baking Aisle</name>
+        <id>baking_aisle</id>
+        <value>This aisle has all the deserts you could ever want. Prepared every morning to ensure freshness.</value>
+        <products>
+            <product>
+                <id>birthday_cake</id>
+                <name>Birthday Cake</name>
+                <image>cake.webp</image>
+                <price>11.99</price>
+                <description>The perfect birthday cake doesn't exist. This one sure comes close though.</description>
+                <more_description>This cake is gluten-free. Candles are not included.</more_description>
+            </product>
+
+            <product>
+                <id>blueberry_muffins</id>
+                <name>Blueberry Muffins</name>
+                <image>blueberrymuffins.webp</image>
+                <price>7.99</price>
+                <description>Blueberry muffins, a classic flavour for muffins.</description>
+                <more_description>The blueberries are organic.</more_description>
+            </product>
+
+            <product>
+                <id>apple_pie</id>
+                <name>Apple Pie</name>
+                <image>applepie.webp</image>
+                <price>13.99</price>
+                <description>Nothing beats a warm apple pie.</description>
+                <more_description>The apples are all from Quebec farms.</more_description>
+            </product>
+
+            <product>
+                <id>donuts</id>
+                <name>Donuts</name>
+                <image>donuts.webp</image>
+                <price>5.99</price>
+                <description>Perfectly circular donuts.</description>
+                <more_description>These donuts come in a box of 12.</more_description>
+            </product>
+
+            <product>
+                <id>cookies</id>
+                <name>Cookies</name>
+                <image>cookies.webp</image>
+                <price>9.99</price>
+                <description>These were baked with love.</description>
+                <more_description>May contain traces of peanuts.</more_description>
+            </product>
+
+            <product>
+                <id>cheesecake</id>
+                <name>Cheesecake</name>
+                <image>cheesecake.webp</image>
+                <price>8.99</price>
+                <description>Who doesn't like cheesecake?</description>
+                <more_description>Keep refrigerated.</more_description>
+            </product>
+
+            <product>
+                <id>croissants</id>
+                <name>Croissants</name>
+                <image>croissants.webp</image>
+                <price>12.99</price>
+                <description>These croissant taste just like those in France.</description>
+                <more_description>Comes in a box of 6.</more_description>
+            </product>
+
+        </products>
+    </aisle>
+
+    <aisle>
+        <name>Beverage Aisle</name>
+        <id>beverage_aisle</id>
+        <value>This aisle has all the drinks we provide, from juice to milk to energy drinks.</value>
+        <products>
+            <product>
+                <id>cocacola</id>
+                <name> Coca-Cola</name>
+                <image>cocacola.webp</image>
+                <price>11.99</price>
+                <description>A refreshing beverage for a hot sunny day.</description>
+                <more_description>Contains corn syrup</more_description>
+            </product>
+
+            <product>
+                <id>dasani_water</id>
+                <name>Dasani</name>
+                <image>dasani_water.webp</image>
+                <price>7.99</price>
+                <description>This water is from natural springs.</description>
+                <more_description>Natural Spring Water.</more_description>
+            </product>
+
+            <product>
+                <id>guru</id>
+                <name>Guru</name>
+                <image>guru.webp</image>
+                <price>13.99</price>
+                <description>For a boost in energy when you most need it, Guru has your back.</description>
+                <more_description>High caffeine content.</more_description>
+            </product>
+
+            <product>
+                <id>milk</id>
+                <name>Milk</name>
+                <image>milk.webp</image>
+                <price>5.99</price>
+                <description>Milk promotes bone strength and growth.</description>
+                <more_description>From Quebec farms.</more_description>
+            </product>
+
+            <product>
+                <id>orange_juice</id>
+                <name>Orange Juice</name>
+                <image>orange_juice.webp</image>
+                <price>9.99</price>
+                <description>The perfect drink to go with your breakfast and quench thirst.</description>
+                <more_description>Naturally Sourced Orange Juice</more_description>
+            </product>
+
+            <product>
+                <id>perrier</id>
+                <name>Perrier</name>
+                <image>perrier.webp</image>
+                <price>8.99</price>
+                <description>A great drink to stimulate your senses.</description>
+                <more_description>Comes in packs of 2.</more_description>
+            </product>
+        </products>
+        
+    </aisle>
+
+    <aisle>
+        <name>Snack Aisle</name>
+        <id>snack_aisle</id>
+        <value>This aisle has all the snacks we provide.</value>
+         <products>
+            <product>
+                <id>maynards</id>
+                <name> Maynards</name>
+                <image>maynards.png</image>
+                <price>3.29</price>
+                <description>For the best sugary snack, look no further.</description>
+                <more_description>Sugar, Glucose Syrup, Modified Corn Starch, Tartaric Acid, Citric Acid, Artificial Flavour, Colour (with Tartrazine).</more_description>
+            </product>
+
+            <product>
+                <id>chips</id>
+                <name>Miss Vickies Chips</name>
+                <image>chips.webp</image>
+                <price>4.99</price>
+                <description>For a quick snack, look no further.</description>
+                <more_description>Selected Potatoes, Canola Oil, Sodium Acetate</more_description>
+            </product>
+
+            <product>
+                <id>cadburry</id>
+                <name>Cadburry Chocolate</name>
+                <image>cadburry.webp</image>
+                <price>3.99</price>
+                <description>For a sweet snack, look no further.</description>
+                <more_description>Milk Chocolate (sugar, Milk Ingredients, Cocoa Butter, Unsweetened Chocolate)</more_description>
+            </product>
+
+            <product>
+                <id>popcorn</id>
+                <name>Popcorn</name>
+                <image>popcorn.webp</image>
+                <price>5.99</price>
+                <description>Very poppy popcorn.</description>
+                <more_description>Contains corn that has been popped.</more_description>
+            </product>
+        </products>
+    </aisle>
+
+   
+
+</aisles>
