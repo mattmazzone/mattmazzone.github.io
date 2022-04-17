@@ -4,7 +4,7 @@
  
 	$users = simplexml_load_file('files/members.xml');
  
-	//we're are going to create iterator to assign to each user
+	
 	$index = 0;
 	$i = 0;
  
@@ -20,6 +20,6 @@
 	file_put_contents('files/members.xml', $users->asXML());
  
 	$_SESSION['message'] = 'Member deleted successfully';
-	header('location: index.php');
+	header('location: backend_users.php');
  
 ?>

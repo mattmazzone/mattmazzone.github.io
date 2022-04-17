@@ -1,31 +1,27 @@
 <?php
 session_start();
-$users = simplexml_load_file('files/members.xml');
+$products = simplexml_load_file('files/products.xml');
 if(isset($_POST['submitSave'])) {
 
-	foreach($users->user as $user){
-		if($user->id == $_POST['id']){
-      $user->email = $_POST['email'];
-      $user->password = $_POST['password'];
-			$user->firstname = $_POST['firstname'];
-			$user->lastname = $_POST['lastname'];
-			$user->address = $_POST['address'];
+	foreach($products->product as $product){
+		if($product->id == $_POST['id']){
+			$product->picture = $_POST['picture'];
+			$product->productname = $_POST['productname'];
+			$product->quantity = $_POST['quantity'];
 			break;
 		}
 	}
-	file_put_contents('files/members.xml', $users->asXML());
-	header('location: backend_users.php');
-	$_SESSION['message'] = 'Member changed successfully';
+	file_put_contents('files/products.xml', $products->asXML());
+	header('location: index.php');
+	$_SESSION['message'] = 'Product changed successfully';
 }
 
-foreach($users->user as $user){
-	if($user->id == $_GET['id']){
-		$id = $user->id;
-    $email = $user->email;
-    $password = $user->password;
-		$firstname = $user->firstname;
-		$lastname = $user->lastname;
-		$address = $user->address;
+foreach($products->product as $product){
+	if($product->id == $_GET['id']){
+		$id = $product->id;
+		$picture = $product->picture;
+		$productname = $product->productname;
+		$quantity = $product->quantity;
 		break;
 	}
 }
@@ -41,13 +37,12 @@ foreach($users->user as $user){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://kit.fontawesome.com/686ef8f824.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    
+  
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-   
-  <style>
-    .container {
+    <style>
+      .container {
     max-width: 700px;
     width: 100%;
     background: rgba(128,128,128,0.2);
@@ -178,45 +173,37 @@ form .button input{
         width:0;
     }
 }
-  </style>
-
-
-
+      </style>
 </head>
 <body>
   
   <div class="container" id="info">
-    <div class="title">Customer Details</div>
+    <div class="title">Product Details</div>
 
     <form method="POST">
       <div class="user-details">
         <div class="input-box">
-          <span class="details">Username</span>
-          <input type="text" name="id" value="<?php echo $id; ?>" class="form-control" readonly="readonly" placeholder="Disabled input">
+          <span class="details">Product ID</span>
+          <input type="text" name="id" value="<?php echo $id; ?>" readonly="readonly">
         </div>
         <div class="input-box">
-          <span class="details">Email</span>
-          <input type="text" name="email" value="<?php echo $email; ?>">
+            <span class="details">New Picture</span>
+            <input type="file" class="form-control" id="customFile" name="picture" value="<?php echo $picture; ?>">
+            <span class="details">Current Picture</span>
+            <input class="form-control" type="text" placeholder="Disabled input" aria-label="Disabled input example" value="<?php echo $picture; ?>" disabled>
         </div>
         <div class="input-box">
-          <span class="details">Password</span>
-          <input type="text" name="password" value="<?php echo $password; ?>">
+          <span class="details">Product Name</span>
+          <input type="text" name="productname" value="<?php echo $productname; ?>">
         </div>
         <div class="input-box">
-          <span class="details">First Name</span>
-          <input type="text" name="firstname" value="<?php echo $firstname; ?>">
-        </div>
-        <div class="input-box">
-          <span class="details">Last name</span>
-          <input type="text" name="lastname" value="<?php echo $lastname; ?>">
-        </div>
-        <div class="input-box">
-          <span class="details">Address</span>
-          <input type="text" name="address" value="<?php echo $address; ?>">
+          <span class="details">Quantity</span>
+          <input type="text" name="quantity" value="<?php echo $quantity; ?>">
         </div>
       </div>
 
       <input class="save" type="submit" value="Save" name="submitSave">
+      
     </form>
 
 

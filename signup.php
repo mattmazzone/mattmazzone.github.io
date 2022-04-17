@@ -1,17 +1,119 @@
-<?php session_start(); ?>
-<html lang="en">
+<?php
+$errors = array();
+if(isset($_POST['login'])){
+    $username = preg_replace('/[^A-Za-z]/', '', $_POST['id']);
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $c_password = $_POST['c_password'];
+
+    $xml = file_get_contents('files/members.xml');
+
+    //error array
+    if(strpos($xml, "<id>$username</id>") !== false) {
+        $errors[] = 'Username already exists';
+    }
+    if($username == ''){
+        $errors[] = 'Username is blank';
+    }
+    if($email == ''){
+        $errors[] = 'Email is blank';
+    }
+    if($password == '' || $c_password ==''){
+        $errors[] = 'Passwords are blank';
+    }
+    if($password != $c_password){
+        $errors[] = 'Passwords do not match';
+    }
+    if($my_checkbox = (empty($_POST['mycheckbox']))){
+        $errors[] = 'You must accept terms and conditions';
+    }
+    if(count($errors) == 0){
+        $users = simplexml_load_file('files/members.xml');
+        $user = $users->addChild('user');
+        $user->addChild('id', $_POST['id']);
+        $user->addChild('email', $_POST['email']);
+        $user->addChild('password', $_POST['password']);
+        $user->addChild('firstname');
+        $user->addChild('lastname');
+        $user->addChild('address');
+      
+        file_put_contents('files/members.xml', $users->asXML());
+        session_start();
+        header('location: login.php');
+     
+        $dom = new DomDocument();
+        $dom->preserveWhiteSpace = false;
+        $dom->formatOutput = true;
+        $dom->loadXML($users->asXML());
+        $dom->save('files/members.xml');
+        $_SESSION['message'] = 'Member added successfully';
+    }
+
+}
+?>
+
+<!DOCTYPE html>
+<html>
 
 <head>
-    <title>Eden Grocery Store</title>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /* Float four columns side by side */
+        
+        .column {
+            float: left;
+            width: 25%;
+            padding: 0 10px;
+        }
+        /* Remove extra left and right margins, due to padding */
+        
+        .row {
+            margin: 0 -5px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+        /* Responsive columns */
+        
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
+            }
+        }
+
+        .small-middle-container{
+            margin: auto;
+            width: 50%;
+        }
+    </style>
+
+
 </head>
 
 <body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <script src="js/main.js"></script>
+
+
+
+
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light rounded py-3 py-lg-5 border-bottom">
         <div class="container-fluid">
@@ -131,97 +233,67 @@
 
 
 
-    <div class="container text-center px-2 my-5">
-        <h1 class="align-middle">FRESH PRODUCTS. FAST DELIVERY. COMPETITIVE PRICES.</h1>
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
-            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
-            </svg>
-        <div class="container px-5">
-            <p>We pride ourselves in provinding the best possible online grocery shopping experience possible. Even though our prices are already hard to beat, we will match any competing prices. With our own dedicated delivery service, we assure that orders
-                always arrive on time. </p>
-        </div>
+    <div class="container-fluid p-5 my-5 text-center">
+        <h1>REGISTER</h1>
     </div>
 
-
-    <div class="container">
-        <div class="row" data-masonry='{"percentPosition": true }'>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img1.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img2.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img3.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img4.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img5.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img6.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img7.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img8.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img9.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img10.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img11.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img12.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img13.webp"></img>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img width="100%" src="Images/frontpage/img14.webp"></img>
-                </div>
-            </div>
-        </div>
+    <div class="text-center">
+        <p>Already have an account?
+            <a href="login.php" id="">Login.</a>
+        </p>
     </div>
 
+    <div class="container-sm p-5 my-5 border bg-light middle-container">
 
+        <!--  <h2 class="font-weight-bold">Personal Information</h2> -->
 
+        <div class="row text-left small-middle-container">
+            <!-- <div class="col "> -->
+                <div>
+                <form method ="post" action="" id="myForm" >
+                    <?php
+                    if(count($errors)>0){
+                        echo '<div class="alert alert-danger" role="alert">';
+                        foreach($errors as $e){
+                            echo '<li>' . $e . '</li>';
+                        }
+                        echo '</div>';
+                    }
+                    ?>
+                <label for="Username">*Username:</label><br>    
+                <input type="text" class="form-control"id="username" name="id"/> 
+                <label for="email">*Email:</label><br>    
+                <input type="text" class="form-control" name="email"/>
+                <label for="password">*Password:</label><br>    
+                <input type="password" class="form-control" name="password"/>
+                <label for="c_password">*Confirm Password:</label><br>    
+                <input type="password" class="form-control" name="c_password"/>
+                <br> <input type="checkbox" name="mycheckbox" value="1">
+                <label for="tandc"> *By clicking, you agree to Terms and Conditions and Privacy Policy. </label>
+                <br><br>
+                <h6>*Required fields</h6> 
+                
+                <br> 
+                <input type="submit" value="Create Account" name="login" class="btn btn-primary">
+                <br>  <br> 
+                <input type="button" onclick="myFunction()" value="Reset" class="btn btn-secondary">
+                </form>
 
+                </div>
 
+                <script>
+                function myFunction() {
+                document.getElementById("myForm").reset();
+                }
+                </script>    
+
+        </div>
+
+        
+    </div>
+
+    <!--   space before footer -->
+    <br>
 
     <!-- Footer -->
     <footer class="bg-light text-center ">
@@ -284,14 +356,7 @@
 
 
 
-
-    <!-- Masonry scripts-->
-    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
-
-
-
-
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
 </html>

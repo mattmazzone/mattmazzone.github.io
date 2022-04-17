@@ -1,4 +1,42 @@
-.container {
+<?php
+session_start();
+if(isset($_POST['submitSave'])) {
+	$products = simplexml_load_file('files/products_jer.xml');
+	$product = $products->addChild('product');
+	$product->addChild('id', $_POST['id']);
+	$product->addChild('picture', $_POST['picture']);
+	$product->addChild('productname', $_POST['productname']);
+    $product->addChild('quantity', $_POST['quantity']);
+
+
+	file_put_contents('files/products_jer.xml', $products->asXML());
+	header('location: backend_products.php');
+  $dom = new DomDocument();
+  $dom->preserveWhiteSpace = false;
+  $dom->formatOutput = true;
+  $dom->loadXML($products->asXML());
+  $dom->save('files/products_jer.xml');
+  $_SESSION['message'] = 'Product added successfully';
+ 
+}  
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Website</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://kit.fontawesome.com/686ef8f824.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <style>
+     .container {
     max-width: 700px;
     width: 100%;
     background: rgba(128,128,128,0.2);
@@ -129,3 +167,38 @@ form .button input{
         width:0;
     }
 }
+   </style>
+</head>
+<body>
+  
+  <div class="container" id="info">
+    <div class="title">Product Details</div>
+
+    <form method="POST">
+      <div class="user-details">
+        <div class="input-box">
+          <span class="details">Product ID</span>
+          <input type="text" name="id">
+        </div>
+        <div class="input-box">
+            <label class="form-label" for="customFile">Picture</label>
+            <input type="file" class="form-control" name="picture" id="customFile" />
+        </div>
+        <div class="input-box">
+          <span class="details">Product Name</span>
+          <input type="text" name="productname">
+        </div>
+        <div class="input-box">
+          <span class="details">Quantity</span>
+          <input type="text" name="quantity">
+        </div>
+      </div>
+
+      <input class="save" type="submit" value="Save" name="submitSave">
+    </form>
+
+
+  
+  </div>
+</body>
+</html>
