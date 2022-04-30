@@ -76,6 +76,11 @@ foreach($orders->order as $order){
             width : 100%;
             max-width: 300px;
         }
+        
+        .disabled-input {
+            color: #212529;
+            background-color: #e9ecef; 
+        }
 
     </style>
 
@@ -121,7 +126,7 @@ foreach($orders->order as $order){
                         <div class="card-body center">
                             <form method="POST">
                                 <label for="ordernumber">Order Number</label><br>
-                                <input type="text" id="ordernumber" name="ordernumber" value="<?php echo $ordernumber; ?>" class="label-border margin-bottom-em regular-boxes"><br>
+                                <input type="text" id="ordernumber" name="ordernumber" value="<?php echo $ordernumber; ?>" class="label-border margin-bottom-em regular-boxes disabled-input" readonly="readonly"><br>
                                 <label for="firstname">First Name</label><br>
                                 <input type="text" id="firstname" name="firstname" value="<?php echo $firstname; ?>" class="label-border margin-bottom-em regular-boxes"><br>
                                 <label for="lastname">Last Name</label><br>
