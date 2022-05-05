@@ -1,8 +1,8 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
 
 <head>
@@ -19,8 +19,17 @@
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="signup.php">Signup</a></li>
+
+                <?php
+                    if (isset($_SESSION["useruid"])){
+                        echo "<li><a href='profile.php'>Profile Page</a></li>";
+                        echo "<li><a href='includes/logout.inc.php'>Log Out</a></li>";
+                    } else {
+                        echo "<li><a href='signup.php'>Sign up</a></li>";
+                        echo "<li><a href='login.php'>Login</a></li>";
+                    }
+                ?>
+
             </ul>
         </nav>
     </div>

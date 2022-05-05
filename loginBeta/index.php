@@ -1,8 +1,20 @@
 <?php
-    include_once 'header.php';
+include_once 'header.php';
 ?>
 
 <div>
+
+
+    <?php
+    if (isset($_SESSION["useruid"])) {
+        echo "<p>Hello there " . $_SESSION["useruid"] .  "!</p>";
+       
+    } else {
+        
+    }
+    ?>
+
+
     <h2>Welcome to my home page</h2>
     <p>This is some paragraph text that we have</p>
 
@@ -18,6 +30,6 @@
 
 
 
-    <?php 
-include_once 'footer.php'
-?>
+    <?php
+    include_once 'footer.php'
+    ?>
