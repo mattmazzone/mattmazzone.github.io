@@ -227,9 +227,10 @@ foreach ($xml->aisle as $aisle){
 
     foreach($aisle->products->product as $product){
 
-    echo '<div class="column">' . '<div class="card">' . '<img class="card-img-top" src="Images/'. $aisle->id . '/' .$product->image. '" alt="Card image" style="width:100%">' .
-        '<div class="card-body">' . '<h4 class="card-title">' . $product->name . '</h4>' . '<p class="text-left">$' .  $product->price . '</p>' .
-        '<a  href="product.php?aisle=' . $aisle->id . '&product=' . $product->id .'" class="btn btn-primary">See Product</a>' . '</div>' .  '</div>' . '</div>';
+    echo '<div class="column">' . '<a href="product.php?aisle=' . $aisle->id . '&product=' . $product->id .'" style="color: #000000; text-decoration: none;">' . 
+        '<div class="card">' . '<img class="card-img-top" src="Images/'. $aisle->id . '/' .$product->image. '" alt="Card image" style="width:100%">' .
+        '<div class="card-body">' . '<h4 class="card-title">' . $product->name . '</h4>' . '<p class="text-left">$' .  $product->price . '</p>' . 
+        '<a  href="product.php?aisle=' . $aisle->id . '&product=' . $product->id .'" class="btn btn-primary">See Product</a>' . '</div>' . '</div>' . '</a>' . '</div>';
 
     }
 }
