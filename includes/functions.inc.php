@@ -70,7 +70,6 @@ function uidExists($conn, $username, $email) {
     }
 
     mysqli_stmt_close($stmt);
-
 }
 
 function createUser($conn, $name, $email, $username, $pwd) {
@@ -124,4 +123,8 @@ function loginUser($conn, $username, $pwd){
         header("location: ../index.php");
         exit();
     }
+}
+
+function allProductsPage($conn){
+    
 }
