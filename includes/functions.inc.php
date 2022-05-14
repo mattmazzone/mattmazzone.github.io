@@ -126,5 +126,51 @@ function loginUser($conn, $username, $pwd){
 }
 
 function allProductsPage($conn){
-    
+    $sql = "SELECT * FROM products;";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../signup.php?error=stmtfailed");
+        exit();
+    }
+
+    //mysqli_stmt_bind_param($stmt,"");
+    mysqli_stmt_execute($stmt);
+
+    $resultData = mysqli_stmt_get_result($stmt);
+
+
+    if ($rows = mysqli_fetch_all($resultData)) {
+
+        return $rows;
+    }
+    else{
+        $result = false;
+        return $result;
+    }
+
+    mysqli_stmt_close($stmt);
+}
+
+function getAisles($conn){
+    $sql = "SELECT DISTINCT aisleName, productsAisleId FROM products;";
+    $stmt = mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../signup.php?error=stmtfailed");
+        exit();
+    }
+    mysqli_stmt_execute($stmt);
+
+    $resultData = mysqli_stmt_get_result($stmt);
+
+
+    if ($rows = mysqli_fetch_all($resultData)) {
+        return $rows;
+    }
+    else{
+        $result = false;
+        return $result;
+    }
+
+    mysqli_stmt_close($stmt);
 }

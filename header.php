@@ -1,5 +1,12 @@
 <?php
-    session_start();
+session_start();
+?>
+
+<?php 
+require_once 'includes/dbh.inc.php';
+require_once 'includes/functions.inc.php';
+
+$productAisles = getAisles($conn);
 ?>
 
 <!DOCTYPE html>
@@ -11,13 +18,12 @@
     <title>Testing Login PHP</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
+
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/allproducts.css">
+
     </script>
 </head>
 </head>
@@ -45,6 +51,13 @@
                         <ul class="dropdown-menu" aria-labelledby="dropdown10">
                             <!-- Add connection to sql products -->
 
+                            <?php
+                                foreach ($productAisles as $aisle){
+                                    echo '<li><a class="dropdown-item" href="aisles.php?aisle='. $aisle[1] . '">' . $aisle[0] . '</a></li>';
+                                }
+                            ?>
+
+                            
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -55,8 +68,8 @@
 
 
                         <?php
-                    if (isset($_SESSION["useruid"])){
-                        echo "<a class='nav-link pe-4' href='profile.php'>
+                        if (isset($_SESSION["useruid"])) {
+                            echo "<a class='nav-link pe-4' href='profile.php'>
                         <i class='bi bi-person-circle' height='30' class='d-inline-block align-text-top'></i>
                         <svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' fill='currentColor'
                             class='bi bi-person-circle' viewBox='0 0 16 16'>
@@ -65,11 +78,11 @@
                                 d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z' />
                         </svg>
                     </a>";
-                    echo "<li class='nav-item'><a class='nav-link fw-bolder pe-4' href='includes/logout.inc.php'>Log Out</a></li>";  
-                    } else {
-                        echo "<li class='nav-item'><a class='nav-link fw-bolder pe-4' href='login.php'>Log In</a></li>";
-                    }
-                    ?>
+                            echo "<li class='nav-item'><a class='nav-link fw-bolder pe-4' href='includes/logout.inc.php'>Log Out</a></li>";
+                        } else {
+                            echo "<li class='nav-item'><a class='nav-link fw-bolder pe-4' href='login.php'>Log In</a></li>";
+                        }
+                        ?>
 
 
 
